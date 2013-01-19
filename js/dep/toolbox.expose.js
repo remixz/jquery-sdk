@@ -43,7 +43,8 @@
 	function viewport() {
 				
 		// the horror case
-		if ($.browser.msie) {
+		var UA = navigator.userAgent;
+		if (UA.match(/MSIE/gi)) {
 			
 			// if there are no scrollbars then use window.height
 			var d = $(document).height(), w = $(window).height();

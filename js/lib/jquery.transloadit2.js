@@ -271,7 +271,8 @@
     }
 
     // Reduce Firefox Title Flickering
-    if ($.browser['mozilla'] && !this.documentTitle) {
+    var UA = navigator.userAgent;
+    if (UA.match(/firefox/gi) && !this.documentTitle) {
       this.documentTitle = document.title;
       document.title = 'Loading...';
     }
